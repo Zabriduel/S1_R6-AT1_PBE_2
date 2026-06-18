@@ -2,8 +2,8 @@ import multer from "multer";
 import path from "path";
 import crypto from "crypto";
 import fs from "fs";
+import { caminhoAbsolutoUploads } from '../server.js'; 
 
-const baseUploadDir = path.resolve(import.meta.dirname, "uploads");
 
 const verificaDir = (dir) => {
   if (!fs.existsSync(dir)) {
@@ -13,7 +13,7 @@ const verificaDir = (dir) => {
 
 const createMulter = ({ folder, allowedTypes, fileSize }) => {
 
-  const uploadDir = path.join(baseUploadDir, folder);
+  const uploadDir = path.join(caminhoAbsolutoUploads, folder);
   verificaDir(uploadDir);
 
   const storage = multer.diskStorage({

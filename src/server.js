@@ -7,10 +7,19 @@ import { initializeDatabase } from './config/db.js';
 const app = express();
 
 app.use(express.json());
-const __dirname = import.meta.dirname;
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+const __dirname = import.meta.dirname;
+export const caminhoAbsolutoUploads = process.env.RENDER
+    ? '/tmp/uploads'
+    : path.join(__dirname, 'uploads');
 app.use('/', router)
+
+
+if (!fs.existsSync(caminhoAbsolutoUploads)) {
+    fs.mkdirSync(caminhoAbsolutoUploads, { recursive: true });
+}
+
+app.use('/uploads', express.static(caminhoAbsolutoUploads));
 
 
 initializeDatabase().then(() => {
