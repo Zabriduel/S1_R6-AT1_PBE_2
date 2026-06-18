@@ -9,6 +9,7 @@ app.use(express.json());
 
 app.use('/', router)
 
+app.use('/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
 
 initializeDatabase().then(() => {
     app.listen(process.env.SERVER_PORT, () => {
