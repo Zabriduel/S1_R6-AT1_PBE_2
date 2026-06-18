@@ -1,15 +1,17 @@
 import express from 'express';
 import router from './routes/routes.js';
 import 'dotenv/config';
+import path from 'path'; //
 import { initializeDatabase } from './config/db.js';
 
 const app = express();
 
 app.use(express.json());
 
+app.use('/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
+
 app.use('/', router)
 
-app.use('/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
 
 initializeDatabase().then(() => {
     app.listen(process.env.SERVER_PORT, () => {
