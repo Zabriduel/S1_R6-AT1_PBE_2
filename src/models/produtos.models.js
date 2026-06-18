@@ -1,4 +1,4 @@
-import {connection} from '../configs/Database.js';
+import {connection} from '../config/Database.js';
 
 const produtosModels = {
     selectALL: async () => {
