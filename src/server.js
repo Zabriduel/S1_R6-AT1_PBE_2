@@ -1,26 +1,13 @@
 import express from 'express';
 import router from './routes/routes.js';
 import 'dotenv/config';
-import path from 'path'; //
 import { initializeDatabase } from './config/db.js';
 
 const app = express();
 
 app.use(express.json());
-
-const __dirname = import.meta.dirname;
-export const caminhoAbsolutoUploads = process.env.RENDER
-    ? '/tmp/uploads'
-    : path.join(__dirname, 'uploads');
+app.use('/uploads', express.static('uploads'));
 app.use('/', router)
-
-
-if (!fs.existsSync(caminhoAbsolutoUploads)) {
-    fs.mkdirSync(caminhoAbsolutoUploads, { recursive: true });
-}
-
-app.use('/uploads', express.static(caminhoAbsolutoUploads));
-
 
 initializeDatabase().then(() => {
     app.listen(process.env.SERVER_PORT, () => {
