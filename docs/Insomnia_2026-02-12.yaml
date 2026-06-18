@@ -1,0 +1,339 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: S1_R1 - AT1
+meta:
+  id: wrk_434d15ee380f47db8b5f600440557ccd
+  created: 1770810680845
+  modified: 1770810680845
+  description: ""
+collection:
+  - name: Produtos
+    meta:
+      id: fld_4364def038f3429a85270f778447b0ff
+      created: 1770896919627
+      modified: 1770896919627
+      sortKey: -1770896919627
+      description: ""
+    children:
+      - url: http://localhost:8081/produtos
+        name: INSERT PRODUTO
+        meta:
+          id: req_f649b915e2b540728d6b1e63f864f22b
+          created: 1770810900721
+          modified: 1770896953824
+          isPrivate: false
+          description: ""
+          sortKey: -1770896926561
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: image
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\46866874890\Downloads\canetabic.jpg
+              type: file
+            - name: idCategoria
+              value: "1"
+              description: ""
+              disabled: false
+            - name: nomeProduto
+              value: Caneta Bic
+              description: ""
+              disabled: false
+            - name: valorProduto
+              value: "4"
+              description: ""
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/produtos
+        name: SELECT PRODUTOS
+        meta:
+          id: req_aab7fddfe5934a7cbfcb3dda72246f1b
+          created: 1770813509419
+          modified: 1770896926707
+          isPrivate: false
+          description: ""
+          sortKey: -1770896926686
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/produtos/produto
+        name: SELECT PRODUTOS by ID
+        meta:
+          id: req_1230f44828164439b4a2ce737e2b7992
+          created: 1770815648085
+          modified: 1770898098276
+          isPrivate: false
+          description: ""
+          sortKey: -1770896926623.5
+        method: GET
+        parameters:
+          - name: idProduto
+            value: "10"
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/produtos
+        name: DELETE PRODUTO
+        meta:
+          id: req_105386ccd58f4b4e9a59ced4a0be097c
+          created: 1770816011303
+          modified: 1770898110156
+          isPrivate: false
+          description: ""
+          sortKey: -1770896926486
+        method: DELETE
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: idProduto
+              value: "10"
+              description: ""
+              disabled: false
+        parameters:
+          - name: idProduto
+            value: "10"
+            description: ""
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/produtos
+        name: UPDATE PRODUTO
+        meta:
+          id: req_31fe91ed9539423786f35f16b19cd1d5
+          created: 1770894638714
+          modified: 1770897477676
+          isPrivate: false
+          description: ""
+          sortKey: -1770896926536
+        method: PUT
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: image
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\46866874890\Downloads\canetabic.jpg
+              type: file
+            - name: idCategoria
+              value: "1"
+              description: ""
+              disabled: false
+            - name: nomeProduto
+              value: Caneta bic
+              description: ""
+              disabled: false
+            - name: valorProduto
+              value: "3"
+              description: ""
+              disabled: false
+        parameters:
+          - name: idProduto
+            value: "10"
+            description: ""
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Categoria
+    meta:
+      id: fld_49788010119341d485a8ec0791bc89ac
+      created: 1770896959609
+      modified: 1770896969237
+      sortKey: -1770896959609
+      description: ""
+    children:
+      - url: http://localhost:8081/categorias
+        name: INSERT CATEGORIAS
+        meta:
+          id: req_48724378fd26479faf602d1ed14540a5
+          created: 1770810689320
+          modified: 1770897846489
+          isPrivate: false
+          description: ""
+          sortKey: -1770896975319
+        method: POST
+        parameters:
+          - name: descricaoCategoria
+            value: Brinquedos
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/categorias
+        name: SELECT CATEGORIAS
+        meta:
+          id: req_ed254745e05f4c39a835e6f507d91931
+          created: 1770812261695
+          modified: 1770897848961
+          isPrivate: false
+          description: ""
+          sortKey: -1770896975544
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/categorias/categoria
+        name: SELECT CATEGORIA by ID
+        meta:
+          id: req_805b593a35ba42599bb7e5e33ba12dd8
+          created: 1770896486495
+          modified: 1770898090533
+          isPrivate: false
+          description: ""
+          sortKey: -1770896975494
+        method: GET
+        parameters:
+          - name: idCategoria
+            value: "10"
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/categorias
+        name: UPDATE CATEGORIA
+        meta:
+          id: req_36ce0d02ce6540b3a30fa8212a4d09c9
+          created: 1770897010231
+          modified: 1770897856478
+          isPrivate: false
+          description: ""
+          sortKey: -1770896975194
+        method: PUT
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: descricaoCategoria
+              value: Brinquedos
+              description: ""
+              disabled: false
+        parameters:
+          - name: idCategoria
+            value: "2"
+            description: ""
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_714ec334e8f96ce60e1a10cdb758f6c84ac00618
+    created: 1770810680853
+    modified: 1770810680853
+environments:
+  name: Base Environment
+  meta:
+    id: env_714ec334e8f96ce60e1a10cdb758f6c84ac00618
+    created: 1770810680850
+    modified: 1770810680850
+    isPrivate: false
