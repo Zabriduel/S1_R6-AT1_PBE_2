@@ -86,7 +86,7 @@ const produtosController = {
             if (!req.file) {
                 novaImagem = produtoAtual[0].vinculoImagem;
             } else {
-                const imagePath = path.resolve(process.cwd(), `uploads/images/${produtoAtual[0].vinculoImagem}`);
+                path.resolve(import.meta.dirname, "../config/uploads/Images", resultadoSelect[0].vinculoImagem)
 
                 if (fs.existsSync(imagePath)) {
                     fs.unlinkSync(imagePath);
