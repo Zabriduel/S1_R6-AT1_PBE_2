@@ -7,8 +7,8 @@ import { initializeDatabase } from './config/db.js';
 const app = express();
 
 app.use(express.json());
-
-app.use('/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
+const __dirname = import.meta.dirname;
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/', router)
 
